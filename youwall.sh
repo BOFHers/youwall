@@ -46,10 +46,13 @@ function checkip {
 }
 
 if [ -z $1 ];then
-	echo -e "\n  Usage:"
-	echo -e "           $0 <ip>          Check if IP is on blacklist (DNSBL) and BAN!"
-	echo -e "           $0 -i            Just read /etc/hosts.deny and BAN! with iptables every IP"
-	echo -e "           $0 -f <ip>       Force add IP to hosts.deny and BAN! with iptables"
+	echo -e "\nScript Writed by J.A. Nache <nache.nache@gmail.com>"
+	echo    "Happy banning!!"
+	echo    "\n  Usage:"
+	echo    "           $0 <ip>          Check if IP is on blacklist (DNSBL) and BAN!"
+	echo    "           $0 -i            Just read /etc/hosts.deny and BAN! with iptables every IP"
+	echo    "           $0 -f <ip>       Force add IP to hosts.deny and BAN! with iptables"
+	echo -e "\n\n"
 	exit 1
 fi
 
