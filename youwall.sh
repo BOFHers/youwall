@@ -37,8 +37,9 @@ function addIpToHostsDeny {
 }
 
 function checkip {
-	rblcheck -qm $1
-	if [ $? -eq 1 ];then
+	echo "Looking for ip $1 on DNSBL sources. Wait..."
+	NUM=`rblcheck $1 | grep -v "not listed by" | wc -l`
+	if [ $NUM -ge 2 ];then
 	        echo "Listed in SPAM LIST"
 
 		addIpToHostsDeny $1
