@@ -15,8 +15,11 @@ function banip {
 	fi
 }
 
+
+
 function banips {
-	iptables -N ocasofirewall &>/dev/null
+
+	iptables -N ocasofirewall &>/dev/null && iptables -A INPUT -j ocasofirewall
 	for i in `cat /etc/hosts.deny | grep ^ALL: | cut -d" " -f2`; do
 		banip $i
 	done
